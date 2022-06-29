@@ -1,0 +1,249 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v4" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="section-banner-v4{% if section.settings.ena_margin_top %}  mt-all {% endif %}"> 
+    <div class="relative banner-v4 {% if section.settings.ena_container %}container container-v3{% endif %} " style="background-image: url({% if section.settings.img_banner != blank %}{{section.settings.img_banner | img_url: 'master'}} {% else %} //via.placeholder.com/1920x550{% endif %})"> 
+      <div class="container container-v2">
+        <div class="row">
+          <div class="col-12">
+            <div class="content-banner {% if settings.enable_rtl_mode %}text-right {% else %}{% if section.settings.select_pos =='left' %} text-left {% elsif section.settings.select_pos == 'center'%}text-center {% elsif section.settings.select_pos == 'right'%} text-right {% endif %}{% endif %}">
+              {% if section.settings.content_banner != blank %}
+              <p class="content" style="color: {{section.settings.color_content_banner}}">{{section.settings.content_banner}}</p>
+              {% endif %}
+              {% if section.settings.title_banner != blank %}
+              <h3 class="title-banner" style="color: {{section.settings.color_title}}">{{section.settings.title_banner}}</h3>
+              {% endif %}
+            </div>
+          </div>
+        </div>      
+        <div class="row js-banner-v4">
+          {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+          {% if block.type == 'banner' %}
+          <div class="col-lg-3 col-md-6 col-sm-12 single-column">
+            <div class="cream-menu text-center">
+              <div class="inner-box">
+                <div class="icon-bg-1" style="background-image: url({% if block.settings.img_menu != blank %}{{block.settings.img_menu | img_url: 'master'}} {% else %} //via.placeholder.com/180x182{% endif %})"></div>
+                <a href="{{block.settings.url_button}}" class="">
+                  <img data-src="{% if block.settings.img_icon != blank %} {{block.settings.img_icon | img_url : 'master'}} {% else %} //via.placeholder.com/50x60 {% endif %}" class="lazyload img-fluid " alt="" style="display:inline-block;">
+                </a>
+              </div>
+              <a href="{{block.settings.url_button}}" class="">
+                {% if block.settings.title_menu != blank %}
+                <h3 class="title-banner title-banner-{{block.id}}">{{block.settings.title_menu}}</h3>
+                {% endif %}
+              </a>
+            </div>
+          </div>
+
+          {% endif %}
+          {% endfor %}
+          {% endif %} 
+        </div>
+        <div class="more-btn text-center">
+          {% if section.settings.button_banner != blank %}
+          <a href="{{section.settings.url_button}}" class="button-banner button-banner-{{ section.id }}">{{section.settings.button_banner}}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-banner-v4 .banner-v4 .more-btn .button-banner-{{ section.id }} {
+    color: {{section.settings.color_btn}};
+    background: {{section.settings.bg_btn}};
+  }
+  .section-banner-v4 .banner-v4 .more-btn  .button-banner-{{ section.id }}:hover {
+    color: {{section.settings.color_btn_hover}};
+    background: {{section.settings.bg_btn_hover}};
+  }
+  {% if section.blocks.size > 0 %}
+  {% for block in section.blocks %}
+  {% if block.type == 'banner' %}
+  .section-banner-v4 .banner-v4 .cream-menu .title-banner-{{block.id}} {
+    color:{{block.settings.color_title_menu}}; 
+    transition: all .3s;
+  }
+  .section-banner-v4 .banner-v4 .cream-menu .title-banner-{{block.id}}:hover {
+    color:{{block.settings.color_title_menu_hover}};
+  }
+  {% endif %}
+  {% endfor %}
+  {% endif %} 
+</style>
+
+{% schema %}
+{
+"name": "BANNER V4",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "header",
+      "content": "Settings Banner 7"
+    },
+    {
+      "type": "checkbox",
+      "id": "ena_container",
+      "label": "Enable Container",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "ena_margin_top",
+      "label": "Enable Add Margin Top",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "select_pos",
+      "label": "Select Position Content",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "title_banner",
+      "label": "Title Banner",
+      "default": "Take The Experience of our Delightful Ice Cream Menu "
+    },
+    {
+      "type": "color",
+      "id": "color_title",
+      "label": "Color Title",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "content_banner",
+      "label": "Content Banner",
+      "default": "ICE CREAM MENU "
+    },
+    {
+      "type": "color",
+      "id": "color_content_banner",
+      "label": "Color Contnet",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "button_banner",
+      "label": "Button Banner 1",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "color",
+      "id": "color_btn",
+      "label": "Color Button",
+      "default": "#F3A395"
+    },
+    {
+      "type": "color",
+      "id": "bg_btn",
+      "label": "Background Color Button",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "color_btn_hover",
+      "label": "Color Button Hover",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "bg_btn_hover",
+      "label": "Background Color Button Hover",
+      "default": "#F3A395"
+    },
+    {
+      "type": "url",
+      "id": "url_button",
+      "label": "URL Button Banner",
+      "default": "/collections/all"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_banner",
+      "label": "Image Banner",
+      "info": "1920 x 700px recommended"
+    }
+  ],
+	"blocks": [
+      {
+        "type": "banner",
+        "name": "Item Banner v4",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title_menu",
+            "label": "Title Menu",
+            "default": "Ice Cream Cup"
+          },
+          {
+            "type": "color",
+            "id": "color_title_menu",
+            "label": "Color Menu",
+            "default": "#000"
+          },
+          {
+            "type": "color",
+            "id": "color_title_menu_hover",
+            "label": "Color Menu Hover",
+            "default": "#fff"
+          },
+          {
+            "type": "image_picker",
+            "id": "img_menu",
+            "label": "Image Backgruond Icon",
+            "info": "180x182px recommended"
+          },
+          {
+            "type": "image_picker",
+            "id": "img_icon",
+            "label": "Image Icon",
+            "info": "50x60px recommended"
+          }
+        ]
+      }
+    ],
+  "presets": [
+    {
+      "name": "BANNER V4",
+      "category": "HOME"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,79 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-video-v1" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="section-video-v1 mt-all" style="background-image: url({% if section.settings.img_bg != blank %}{{section.settings.img_bg|img_url:'master'}}{% else %}//via.placeholder.com/1920x550{% endif %});  background-position: center center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+    <div class="container container-v2">
+      <div class="row" style="margin:auto 0;">
+        <div class="col-12">
+          <div class="box-video text-center">
+            <a data-fancybox href="{{section.settings.url_video1}}">
+              <span class="box-btn">
+                <span class="btn-banner">
+                  <i class="fa fa-play"></i>
+                  <span class="line-video line-1"></span>
+                  <span class="line-video line-2"></span>
+                  <span class="line-video line-3"></span>
+                </span>
+              </span>
+            </a>
+            <div class="banner-info">
+              {% if section.settings.title_banner != blank %}
+              <h3 class="title-banner" style="color: {{section.settings.color_title}}">{{section.settings.title_banner}}</h3>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+
+
+</style>
+
+{% schema %}
+{
+  "name": "VIDEO V1",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Setting Video 1"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_bg",
+      "info": "1920 x 550px recommended",
+      "label": "Background image"
+    },
+    {
+      "type": "url",
+      "id": "url_video1",
+      "label": "URL Video 1",
+      "info": "[Upload video .mp4 in here](/admin/settings/files)"
+    },
+    {
+      "type": "text",
+      "id": "title_banner",
+      "label": "Title Banner ",
+      "default": "WELCOME TO KEANGAM"
+    },
+    {
+      "type": "color",
+      "id": "color_title",
+      "label": "Color",
+      "default": "#000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "VIDEO V1",
+      "category": "HOME"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

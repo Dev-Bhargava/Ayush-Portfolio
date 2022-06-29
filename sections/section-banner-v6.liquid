@@ -1,0 +1,82 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v6" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="section-banner-v6 ">
+    <div class="">
+      <div class="row" style="margin: 0 auto;">
+        <div class="col-12 p-0">
+          <div class="banner">
+            <img data-src=" {% if section.settings.img_banner != blank %}{{section.settings.img_banner | img_url:'master'}} {% else %}//via.placeholder.com/1920x500{% endif %}" class="lazyload img-fluid" alt="_img">
+            <div class="content-banner">
+              <a href="{{section.settings.url_banner}}">
+              {% if section.settings.title != blank %}
+              <h3 class="title">{{section.settings.title}}</h3>
+              {% endif %}
+                 </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>   
+</div>
+<style>
+  .section-banner-v6 .banner .content-banner .title {
+  color: {{section.settings.color_title}};
+  }
+   .section-banner-v6 .banner .content-banner:hover .title {
+  color: {{section.settings.color_hover_title}};
+  }
+</style>
+{% schema %}
+{
+  "name": "BANNER V6",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_banner",
+      "label": "Image ",
+      "info": "1920 x 500px recommended"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": " Title",
+      "default": "About Services"
+    },
+    {
+      "type": "url",
+      "id": "url_banner",
+      "label": "URL banner",
+      "default": "/collections/all"
+    },
+    {
+      "type": "color",
+      "id": "color_title",
+      "label": "Color Title",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "color_hover_title",
+      "label": "Color Hover Title",
+      "default": "#fff"
+    }
+   
+  ],
+  "presets": [
+    {
+      "name": "BANNER V6",
+      "category": "HOME"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

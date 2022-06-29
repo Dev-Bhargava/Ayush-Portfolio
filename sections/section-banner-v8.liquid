@@ -1,0 +1,69 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v8" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="section-banner-v8 mt-all">
+    <div class="container-full">
+      <div class=" js-banner-v8">
+        {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+        {% if block.type == 'banner' %}
+        <div class="text-center">
+          <div class="banner-info">
+            <img data-src=" {% if block.settings.img_banner1 != blank %}{{block.settings.img_banner1 | img_url:'master'}} {% else %}//via.placeholder.com/990x700{% endif %}" class="lazyload img-fluid" alt="_img">
+            <a data-fancybox href="{{block.settings.url_video1}}">
+              <span class="btn-banner">
+                <i class="fa fa-play"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %} 
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+"name": "BANNER V8",
+"settings": [
+{
+        "type": "checkbox",
+        "id": "enable-img_title",
+        "label": "Enable img title",
+        "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Item Banner ",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img_banner1",
+          "info": "456 x 456px recommended",
+          "label": "Collection 1"
+        },
+        {
+          "type": "url",
+          "id": "url_video1",
+          "label": "URL Video 1",
+          "info": "[Upload video .mp4 in here](/admin/settings/files)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BANNER V8",
+      "category": "HOME"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

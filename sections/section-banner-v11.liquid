@@ -1,0 +1,268 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v11" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="section-banner-v11 mt-all" style="background-color: {{section.settings.bg_section_color}};">
+    <div class="container container-v2">
+      <div class="row">   
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+          <div class="effect-skew image-m220 ApImage">
+            {% if section.settings.title_block != blank %}
+            <p class="title-block" style="color: {{section.settings.color_sub_title}}" >{{section.settings.title_block}}</p>
+            {% endif %}
+            <div class="content">
+              <div class="image-widget">
+                <a href="{{section.settings.url_banner}}">
+                  {% if section.settings.img_banner_right != blank %}
+                  <img data-src="{{section.settings.img_banner_right | img_url : 'master'}}" class="lazyload img-fluid" alt >
+                  {% else %}
+                  <img data-src="//via.placeholder.com/530x570" class="lazyload " alt>
+                  {% endif %}
+                </a>
+              </div>
+              <div class="image-description">
+                {% if section.settings.title_banner != blank %}
+                <h6 style="color: {{section.settings.color_title}}"> {{section.settings.title_banner}}</h6>
+                {% endif %}
+                {% if section.settings.button_banner != blank %}
+                <a href="{{section.settings.url_banner}}" class="button-shop button-shop-{{ section.id }}" title="">{{section.settings.button_banner}}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          <div class=" widget-image__favourites effect-skew ApImage">
+            {% if section.settings.title_block2 != blank %}
+            <p class="title-block" style="color: {{section.settings.color_sub_title}}" >{{section.settings.title_block2}}</p>
+            {% endif %}
+            <div class="content">
+              <div class="image-widget">
+                <a href="{{section.settings.url_banner}}">
+                  {% if section.settings.img_banner_right2 != blank %}
+                  <img data-src="{{section.settings.img_banner_right2 | img_url : 'master'}}" class="lazyload img-fluid " alt >
+                  {% else %}
+                  <img data-src="//via.placeholder.com/375x402" class="lazyload " alt>
+                  {% endif %}
+                </a>
+              </div>
+              <div class="image-description">
+                {% if section.settings.title_banner2 != blank %}
+                <h6 style="color: {{section.settings.color_title}}"> {{section.settings.title_banner2}}</h6>
+                {% endif %}
+                {% if section.settings.button_banner2 != blank %}
+                <a href="{{section.settings.url_banner}}" class="button-shop button-shop-{{ section.id }}" title="">{{section.settings.button_banner2}}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+          <div class=" widget-image__favourites effect-skew ApImage image-m220">
+            {% if section.settings.title_block3 != blank %}
+            <p class="title-block" style="color: {{section.settings.color_sub_title}}" >{{section.settings.title_block3}}</p>
+            {% endif %}
+            <div class="content">
+              <div class="image-widget">
+                <a href="{{section.settings.url_banner}}">
+                  {% if section.settings.img_banner_right3 != blank %}
+                  <img data-src="{{section.settings.img_banner_right3 | img_url : 'master'}}" class="lazyload img-fluid " alt >
+                  {% else %}
+                  <img data-src="//via.placeholder.com/375x402" class="lazyload " alt>
+                  {% endif %}
+                </a>
+              </div>
+              <div class="image-description">
+                {% if section.settings.title_banner3 != blank %}
+                <h6 style="color: {{section.settings.color_title}}"> {{section.settings.title_banner3}}</h6>
+                {% endif %}
+                {% if section.settings.button_banner3 != blank %}
+                <a href="{{section.settings.url_banner}}" class="button-shop button-shop-{{ section.id }}" title="">{{section.settings.button_banner3}}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          <div class="effect-skew ApImage">
+            {% if section.settings.title_block4 != blank %}
+            <p class="title-block" style="color: {{section.settings.color_sub_title}}" >{{section.settings.title_block4}}</p>
+            {% endif %}
+            <div class="content">
+              <div class="image-widget">
+                <a href="{{section.settings.url_banner}}">
+                  {% if section.settings.img_banner_right4 != blank %}
+                  <img data-src="{{section.settings.img_banner_right4 | img_url : 'master'}}" class="lazyload img-fluid " alt >
+                  {% else %}
+                  <img data-src="//via.placeholder.com/530x570" class="lazyload " alt>
+                  {% endif %}
+                </a>
+              </div>
+              <div class="image-description">
+                {% if section.settings.title_banner4 != blank %}
+                <h6 style="color: {{section.settings.color_title}}"> {{section.settings.title_banner4}}</h6>
+                {% endif %}
+                {% if section.settings.button_banner4 != blank %}
+                <a href="{{section.settings.url_banner}}" class="button-shop button-shop-{{ section.id }}" title="">{{section.settings.button_banner4}}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .section-banner-v11 .ApImage .content .image-description .button-shop-{{ section.id }} {
+    color:{{section.settings.color_btn}};
+  }
+  .section-banner-v11 .ApImage .content .image-description .button-shop-{{ section.id }}:hover {
+    color:{{section.settings.color_btn_hover}};
+  }
+
+</style>
+
+{% schema %}
+{
+  "name": "BANNER V11",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title_block",
+      "label": "Title Block",
+      "default": "Discount 30% off"
+    },
+
+    {
+      "type": "url",
+      "id": "url_banner",
+      "label": "URL Button ",
+      "default": "/collections/all"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_banner_right",
+      "label": "Image Banner",
+      "info": "530 x 570px recommended"
+    },
+
+    {
+      "type": "text",
+      "id": "title_banner",
+      "label": "Title Banner",
+      "default": "For Summer 2018"
+    },
+    {
+      "type": "text",
+      "id": "button_banner",
+      "label": "Button Banner 1",
+      "default": "Shop now"
+    },
+	{
+      "type": "text",
+      "id": "title_block2",
+      "label": "Title Block 2",
+      "default": "new season"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_banner_right2",
+      "label": "Image Banner 2",
+      "info": "375x402px recommended"
+    },
+    {
+      "type": "text",
+      "id": "title_banner2",
+      "label": "Title Banner 2",
+      "default": "Coats"
+    },
+    {
+      "type": "text",
+      "id": "button_banner2",
+      "label": "Button Banner 2",
+      "default": "Shop now"
+    },
+    {
+      "type": "text",
+      "id": "title_block3",
+      "label": "Title Block 3",
+      "default": "Our Favourites"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_banner_right3",
+      "label": "Image Banner 3",
+      "info": "530 x 570px recommended"
+    },
+    {
+      "type": "text",
+      "id": "title_banner3",
+      "label": "Title Banner 3",
+      "default": "For Summer 2021"
+    },
+    {
+      "type": "text",
+      "id": "button_banner3",
+      "label": "Button Banner 3",
+      "default": "Shop now"
+    },
+	{
+      "type": "text",
+      "id": "title_block4",
+      "label": "Title Block 4",
+      "default": "Discount 30% off"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_banner_right4",
+      "label": "Image Banner 4",
+      "info": "375x402px recommended"
+    },
+    {
+      "type": "text",
+      "id": "title_banner4",
+      "label": "Title Banner 4",
+      "default": "For Summer 2021"
+    },
+    {
+      "type": "text",
+      "id": "button_banner4",
+      "label": "Button Banner 4",
+      "default": "Shop now"
+    },
+    {
+      "type": "color",
+      "id": "color_btn",
+      "label": "Color button banner",
+      "default": "#ee7b7b"
+    },
+
+    {
+      "type": "color",
+      "id": "color_btn_hover",
+      "label": "Color button banner Hover",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "color_sub_title",
+      "label": "Color Sub banner",
+      "default": "#f2f2f2"
+    },
+
+    {
+      "type": "color",
+      "id": "color_title",
+      "label": "Color Title",
+      "default": "#000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BANNER V11",
+      "category": "HOME"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,253 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v9" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="section-banner-v9 {% if section.settings.ena_padding_top %} padding_top_banner5 {% endif %}">
+    <div class=" container container-v2">
+      <div class="row"> 
+        <div class=" col-lg-7  order-lg-2 order-lg-1  order-md-1 banner2">
+          <div class="box-img img-right">
+            <a href="{{section.settings.url_banner}}">
+              {% if section.settings.img_banner_right != blank %}
+              <img data-src="{{section.settings.img_banner_right | img_url : 'master'}}" class="lazyload img-fluid" alt >
+              {% else %}
+              <img data-src="//via.placeholder.com/520x630" class="lazyload img-fluid " alt>
+              {% endif %}
+            </a>
+            <div class="widget-small">
+              {% if section.settings.img_widget_small != blank %}
+              <img data-src="{{section.settings.img_widget_small | img_url : 'master'}}" class="lazyload img-fluid" alt >
+              {% else %}
+              <img data-src="//via.placeholder.com/120x162" class="lazyload img-fluid " alt>
+              {% endif %}
+            </div>
+          </div>
+          <div class="img-small">
+            {% if section.settings.img_banner_small != blank %}
+            <img data-src="{{section.settings.img_banner_small | img_url : 'master'}}" class="lazyload img-fluid" alt >
+            {% else %}
+            <img data-src="//via.placeholder.com/380x408" class="lazyload img-fluid " alt>
+            {% endif %}
+            <div class="widget-small2">
+              {% if section.settings.img_widget_small2 != blank %}
+              <img data-src="{{section.settings.img_widget_small2 | img_url : 'master'}}" class="lazyload img-fluid" alt >
+              {% else %}
+              <img data-src="//via.placeholder.com/120x162" class="lazyload img-fluid " alt>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class=" col-lg-5 order-lg-1 order-lg-2 order-md-2" >
+          <div class="box-img1 img-left" >
+            <div class="banner-content">
+              <div class="logo text-center" >
+                {% if section.settings.img_logo != blank %}
+                <img data-src="{{section.settings.img_logo | img_url : 'master'}}" class="lazyload img-fluid" alt >
+                {% else %}
+                <img data-src="//via.placeholder.com/94x95" class="lazyload img-fluid " alt>
+                {% endif %}
+
+                <div class="widget-image">
+                  {% if section.settings.img_widget != blank %}
+                  <img data-src="{{section.settings.img_widget | img_url : 'master'}}" class="lazyload img-fluid" alt >
+                  {% else %}
+                  <img data-src="//via.placeholder.com/59x68" class="lazyload img-fluid " alt>
+                  {% endif %}
+                </div>
+              </div>
+              {% if section.settings.sub_title != blank %}
+              <p class="sub-title-heading" style="color: {{section.settings.color_sub_title_heading}}">{{section.settings.sub_title}}</p>
+              {% endif %}
+              {% if section.settings.title_banner != blank %}
+              <h3 class="title-banner" style="color: {{section.settings.color_title}}">{{section.settings.title_banner}}</h3>
+              {% endif %}
+              {% if section.settings.sub_title_banner != blank %}
+              <p class="sub-title" style="color: {{section.settings.color_sub_title}}">{{section.settings.sub_title_banner}}</p>
+              {% endif %}
+              <div class="button-banner">
+                {% if section.settings.button_banner != blank %}
+                <a href="{{section.settings.url_banner}}" class="button-shop button-shop-{{ section.id }}" title="">{{section.settings.button_banner}}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-banner-v9 .box-img1 .banner-content .button-shop-{{ section.id }} {
+    color: {{section.settings.color_btn}};
+    background: {{section.settings.bg_btn}};
+  }
+  .section-banner-v9 .box-img1 .banner-content .button-shop-{{ section.id }}:hover {
+    color: {{section.settings.color_btn_hover}};
+    background:{{section.settings.bg_hover_btn}};
+  }
+</style>
+{% schema %}
+{
+"name": "BANNER V9",
+"settings": [
+    {
+      "type": "checkbox",
+      "id": "ena_padding_top",
+      "label": "Enable Add Padding Top",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "ena_container",
+      "label": "Enable Add Container Box",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "header",
+      "content": "Background Color Banner"
+    },
+    {
+      "type": "header",
+      "content": "Settings Banner Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_logo",
+      "label": "Image Banner Logo",
+      "info": "94x95px recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_widget",
+      "label": "Image widget",
+      "info": "59x68px recommended"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Title Heading",
+      "default": "OUR ABOUT US"
+    },
+    {
+      "type": "color",
+      "id": "color_sub_title_heading",
+      "label": "Color Sub Title Heading",
+      "default": "#F06B9A"
+    },
+    {
+      "type": "text",
+      "id": "title_banner",
+      "label": "Title Banner",
+      "default": "Decor & Furniture"
+    },
+    {
+      "type": "color",
+      "id": "color_title",
+      "label": "Color Title banner",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "sub_title_banner",
+      "label": "Sub Title Banner",
+      "default": "Handcrafted furniture, artisanal rugs, wallpaper, classic vases, and lighting accessories—well-made and carefully considered—whether made by Heath or by like-minded makers we admire. Welcome in."
+    },
+    {
+      "type": "color",
+      "id": "color_sub_title",
+      "label": "Color Sub Title banner",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "button_banner",
+      "label": "Button Banner 1",
+      "default": "Shop now"
+    },
+    {
+      "type": "color",
+      "id": "color_btn",
+      "label": "Color button banner",
+      "default": "#222"
+    },
+    {
+      "type": "color",
+      "id": "bg_btn",
+      "label": "Background Color button banner",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "bg_hover_btn",
+      "label": "Background Color button banner",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "color_btn_hover",
+      "label": "Color button banner Hover",
+      "default": "#fff"
+    },
+    {
+      "type": "url",
+      "id": "url_banner",
+      "label": "URL Button ",
+      "default": "/collections/all"
+    },
+    {
+      "type": "header",
+      "content": "Settings Banner Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_banner_right",
+      "label": "Image Banner",
+      "info": "520x630px recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_banner_small",
+      "label": "Image Banner Small",
+      "info": "380x408px recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_widget_small",
+      "label": "img widget small",
+      "info": "120x162px recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_widget_small2",
+      "label": "img widget small 2",
+      "info": "120x162px recommended"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BANNER V9",
+      "category": "HOME"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,474 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v10" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="section-banner-v10" style="background-image: url({% if section.settings.img_banner != blank %}{{section.settings.img_banner | img_url: 'master'}} {% else %} //via.placeholder.com/1920x900{% endif %})">
+    <div class="container container-v2">
+      <div class="row ">  
+        <div class="col-12">
+          <div class="content-heading text-center">
+            {% if section.settings.sub_heading != blank %}
+            <h6 class="sub-heading" style="color: {{section.settings.color_sub_heading}}">{{section.settings.sub_heading}}</h6>
+            {% endif %}
+            {% if section.settings.title_heading != blank %}
+            <h4 class="heading" style="color: {{section.settings.color_heading}}">{{section.settings.title_heading}}</h4>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4" >
+          <div class="item-banner ">
+            <div class="content-banner">
+              {% if section.settings.title_banner != blank %}
+              <h3 class="title-banner" style="color: {{section.settings.color_title}}">{{section.settings.title_banner}}</h3>
+              {% endif %}
+              {% if section.settings.price_dola != blank %}
+              <p class="price-dola "style="color: {{section.settings.color_price_dola}}">{{section.settings.price_dola}}</p>
+              {% endif %}
+              {% if section.settings.elementor_typo != blank %}
+              <p class="elementor-typo ">{{section.settings.elementor_typo}}</p>
+              {% endif %}
+            </div>
+            <div class="elementor-price" style="background: {{section.settings.bg_price}}">
+              {% if section.settings.price != blank %}
+              <span class="price" style="color: {{section.settings.color_price}}">{{section.settings.price}}</span>
+              {% endif %}
+              {% if section.settings.price_description != blank %}
+              <span class="price-description" style="color: {{section.settings.color_price_description}}">{{section.settings.price_description}}</span>
+              {% endif %}
+            </div>
+            {% if section.settings.features_title != blank %}
+            <h4 class="features-title" style="color: {{section.settings.color_features_title}}">{{section.settings.features_title}}</h4>
+            {% endif %}
+            <div class="menu">
+              <ul class="cat-menu2">
+                {% if section.blocks.size > 0 %}
+                {% for block in section.blocks %}
+                {% if block.type == 'banner' %}
+                <li>
+                  {% if block.settings.cart_menu != blank %}
+                  <span style="color: {{block.settings.color_cart_menu}}">{{block.settings.cart_menu}}
+                  </span>
+                  {% endif %}
+                </li>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+              </ul>
+            </div>
+            <div class="button-banner">
+              {% if section.settings.button_banner != blank %}
+              <a href="{{section.settings.url_banner}}" class="button-shop button-shop-{{ section.id }}" title="">{{section.settings.button_banner}}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="item-banner">
+            <div class="content-banner">
+              {% if section.settings.title_banner2 != blank %}
+              <h3 class="title-banner" style="color: {{section.settings.color_title}}">{{section.settings.title_banner2}}</h3>
+              {% endif %}
+              {% if section.settings.price_dola2 != blank %}
+              <p class="price-dola " style="color: {{section.settings.color_price_dola}}">{{section.settings.price_dola2}}</p>
+              {% endif %}
+              {% if section.settings.elementor_typo2 != blank %}
+              <p class="elementor-typo ">{{section.settings.elementor_typo2}}</p>
+              {% endif %}
+            </div>
+            <div class="elementor-price" style="background: {{section.settings.bg_price}}">
+              {% if section.settings.price2 != blank %}
+              <span class="price" style="color: {{section.settings.color_price}}">{{section.settings.price2}}</span>
+              {% endif %}
+              {% if section.settings.price_description2 != blank %}
+              <span class="price-description" style="color: {{section.settings.color_price_description}}">{{section.settings.price_description2}}</span>
+              {% endif %}
+            </div>
+            {% if section.settings.features_title2 != blank %}
+            <h4 class="features-title" style="color: {{section.settings.color_features_title}}">{{section.settings.features_title2}}</h4>
+            {% endif %}
+            <div class="menu">
+              <ul class="cat-menu2">
+                {% if section.blocks.size > 0 %}
+                {% for block in section.blocks %}
+                {% if block.type == 'banner2' %}
+                <li>
+                  {% if block.settings.cart_menu2 != blank %}
+                  <span style="color: {{block.settings.color_cart_menu2}} ">{{block.settings.cart_menu2}}
+                  </span>
+                  {% endif %}
+                </li>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+              </ul> 
+            </div>
+            <div class="button-banner">
+              {% if section.settings.button_banner2 != blank %}
+              <a href="{{section.settings.url_banner}}" class="button-shop button-shop-{{ section.id }}" title="">{{section.settings.button_banner2}}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+          <div class="item-banner">
+            <div class="content-banner">
+              {% if section.settings.title_banner3 != blank %}
+              <h3 class="title-banner" style="color: {{section.settings.color_title}}">{{section.settings.title_banner3}}</h3>
+              {% endif %}
+              {% if section.settings.price_dola3 != blank %}
+              <p class="price-dola " style="color: {{section.settings.color_price_dola}}">{{section.settings.price_dola3}}</p>
+              {% endif %}
+              {% if section.settings.elementor_typo3 != blank %}
+              <p class="elementor-typo ">{{section.settings.elementor_typo3}}</p>
+              {% endif %}
+            </div>
+            <div class="elementor-price" style="background: {{section.settings.bg_price}}">
+              {% if section.settings.price3 != blank %}
+              <span class="price" style="color: {{section.settings.color_price}}">{{section.settings.price3}}</span>
+              {% endif %}
+              {% if section.settings.price_description3 != blank %}
+              <span class="price-description" style="color: {{section.settings.color_price_description}}">{{section.settings.price_description3}}</span>
+              {% endif %}
+            </div>
+            {% if section.settings.features_title3 != blank %}
+            <h4 class="features-title" style="color: {{section.settings.color_features_title}}">{{section.settings.features_title3}}</h4>
+            {% endif %}
+            <div class="menu">
+              <ul class="cat-menu2">
+                {% if section.blocks.size > 0 %}
+                {% for block in section.blocks %}
+                {% if block.type == 'banner3' %}
+                <li>
+                  {% if block.settings.cart_menu3 != blank %}
+                  <span style="color: {{block.settings.color_cart_menu3}} ">{{block.settings.cart_menu3}}
+                  </span>
+                  {% endif %}
+                </li>
+                {% endif %}
+                {% endfor %}
+                {% endif %} 
+              </ul>
+            </div>
+            <div class="button-banner">
+              {% if section.settings.button_banner3 != blank %}
+              <a href="{{section.settings.url_banner}}" class="button-shop button-shop-{{ section.id }}" title="">{{section.settings.button_banner3}}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .section-banner-v10 .item-banner .button-banner .button-shop-{{ section.id }} {
+    color: {{section.settings.color_btn}};
+  }
+  .section-banner-v10 .item-banner .button-banner .button-shop-{{ section.id }}:hover {
+    color: {{section.settings.color_btn_hover}};
+    background:{{section.settings.bg_hover_btn}};
+  }
+  </style>
+{% schema %}
+{
+"name": "BANNER V10",
+  "settings": [
+    {
+    "type": "header",
+    "content": "Setting Banner"
+	},
+    {
+      "type": "header",
+      "content": "Setting Heading "
+    },
+    {
+      "type": "image_picker",
+      "id": "img_banner",
+      "label": "Image Background Banner",
+      "info": "1920 x 900px recommended"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub Heading",
+      "default": "Find Your Taste"
+    },
+    {
+      "type": "color",
+      "id": "color_sub_heading",
+      "label": "Color Sub Heading",
+      "default": "#f06b9a"
+    },
+    {
+      "type": "text",
+      "id": "title_heading",
+      "label": "Title Heading",
+      "default": "Buy any ice cream @ get One Free"
+    },
+    {
+      "type": "color",
+      "id": "color_heading",
+      "label": "Color Heading",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "Setting banner 1"
+    },
+    {
+      "type": "text",
+      "id": "title_banner",
+      "label": "Title banner",
+      "default": "Hamburger"
+    },
+    {
+      "type": "text",
+      "id": "price_dola",
+      "label": "Price_Dola 1",
+      "default": "$150"
+    },
+    {
+      "type": "text",
+      "id": "elementor_typo",
+      "label": "Elementor Typo 1",
+      "default": "Per Month"
+    },
+	{
+      "type": "color",
+      "id": "bg_price",
+      "label": "Bacground Price",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Title Price",
+      "default": "20%"
+    },
+    {
+      "type": "text",
+      "id": "price_description",
+      "label": "Title Price Description",
+      "default": "On all treatments"
+    },
+    {
+      "type": "text",
+      "id": "features_title",
+      "label": "Title features",
+      "default": "3 Months Membership"
+    },
+    {
+      "type": "text",
+      "id": "button_banner",
+      "label": "Button Banner ",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "header",
+      "content": "Setting banner 2"
+    },
+    {
+      "type": "text",
+      "id": "title_banner2",
+      "label": "Title banner",
+      "default": "Hamburger"
+    },
+    {
+      "type": "text",
+      "id": "price_dola2",
+      "label": "Price Dola 2",
+      "default": "$200"
+    },
+    {
+      "type": "text",
+      "id": "elementor_typo2",
+      "label": "Elementor Typo 2",
+      "default": "Per Month"
+    },
+    {
+      "type": "text",
+      "id": "price2",
+      "label": "Title Price 2",
+      "default": "30%"
+    },
+    {
+      "type": "text",
+      "id": "price_description2",
+      "label": "Title Price Description 2",
+      "default": "On all treatments"
+    },
+    {
+      "type": "text",
+      "id": "features_title2",
+      "label": "Title features 2",
+      "default": "3 Months Membership"
+    },
+    {
+      "type": "text",
+      "id": "button_banner2",
+      "label": "Button Banner 2",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "header",
+      "content": "Setting banner 3"
+    },
+    {
+      "type": "text",
+      "id": "title_banner3",
+      "label": "Title banner",
+      "default": "Hamburger"
+    },
+    {
+      "type": "text",
+      "id": "price_dola3",
+      "label": "Price_Dola 3",
+      "default": "$250"
+    },
+    {
+      "type": "text",
+      "id": "elementor_typo3",
+      "label": "Elementor Typo3 ",
+      "default": "Per Month"
+    },
+    {
+      "type": "text",
+      "id": "price3",
+      "label": "Title Price 3",
+      "default": "50%"
+    },
+    {
+      "type": "text",
+      "id": "price_description3",
+      "label": "Title Price Description 3",
+      "default": "On all treatments"
+    },
+    {
+      "type": "text",
+      "id": "features_title3",
+      "label": "Title features 3",
+      "default": "3 Months Membership"
+    },
+    {
+      "type": "text",
+      "id": "button_banner3",
+      "label": "Button Banner 3",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "color",
+      "id": "color_title",
+      "label": "Color Title",
+      "default": "#e885a3"
+    },
+    {
+      "type": "color",
+      "id": "color_price_dola",
+      "label": "Color Price Dola",
+      "default": "#7c3367"
+    },
+    {
+      "type": "color",
+      "id": "color_price",
+      "label": "Color Price",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "color_price_description",
+      "label": "Color Price Description",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "color_features_title",
+      "label": "Color features",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "color_btn",
+      "label": "Color button banner",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "bg_hover_btn",
+      "label": "Background Color button banner",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "color_btn_hover",
+      "label": "Color button banner Hover",
+      "default": "#fff"
+    }
+  ],
+	"blocks": [
+    {
+      "type": "banner",
+      "name": "Item banner v1",
+      "settings": [
+      {
+        "type": "text",
+        "id": "cart_menu",
+        "label": "Cart Menu",
+        "default": "Discovery"
+      },
+
+    {
+      "type": "color",
+      "id": "color_cart_menu",
+      "label": "Color",
+      "default": "#868686"
+    }
+      ]
+    },
+	{
+      "type": "banner2",
+      "name": "Item banner v2",
+      "settings": [
+      {
+        "type": "text",
+        "id": "cart_menu2",
+        "label": "Cart Menu",
+        "default": "Discovery"
+      },
+    {
+      "type": "color",
+      "id": "color_cart_menu2",
+      "label": "Color ",
+      "default": "#868686"
+    }
+      ]
+    },
+	{
+      "type": "banner3",
+      "name": "Item banner v3",
+      "settings": [
+      {
+        "type": "text",
+        "id": "cart_menu3",
+        "label": "Cart Menu",
+        "default": "Discovery"
+      },
+    {
+      "type": "color",
+      "id": "color_cart_menu3",
+      "label": "Color ",
+      "default": "#868686"
+    }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BANNER V10",
+      "category": "HOME"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
