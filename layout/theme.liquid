@@ -137,7 +137,11 @@ Add the page template as a class for easy page or template specific styling.
   <style>
     .side-border p{
       margin-bottom: 0;
-      width: fit-content;
+      width: 100%;
+      white-space: nowrap;
+      animation: caption 15s linear 0s infinite;
+        -moz-animation: caption 15s linear 0s infinite;
+          -webkit-animation: caption 15s linear 0s infinite;
     }
     .side-border{
       width: 100%;
