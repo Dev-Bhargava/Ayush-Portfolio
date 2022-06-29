@@ -234,6 +234,12 @@ Add the page template as a class for easy page or template specific styling.
       left: auto;
       bottom: 0;
     }
+    .main-content{
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      right: 50px;
+    }
   </style>
     <div class="side-border top">
       <div class="skill-box">Programming Skills</div>
@@ -371,12 +377,14 @@ Add the page template as a class for easy page or template specific styling.
     <div class="side-border left">
       <p>A self-motivated , creative and ambitious Web Developer with  two years of professional experience. Knowledgeable in designing, maintaining and developing user interfaces, testing and debugging within e-commerce technologies. Equipped with a diverse and promising skill-set.</p>
     </div>
-    <div class="row align-items-start">
-      <div class="col-md-7 justtify-content-between align-items-center">
-        <h1>WORK</h1>
-      </div>
-      <div class="col-md-5 justtify-content-between align-items-center">
-        <h1>CONTACT</h1>
+    <div class="main-content">
+      <div class="row align-items-start">
+        <div class="col-md-7 justtify-content-between align-items-center">
+          <h1>WORK</h1>
+        </div>
+        <div class="col-md-5 justtify-content-between align-items-center">
+          <h1>CONTACT</h1>
+        </div>
       </div>
     </div>
   {% endif %}
