@@ -106,7 +106,7 @@
 {% comment %}
 Add the page template as a class for easy page or template specific styling.
 {% endcomment %}
-<body class="{% if settings.enable_rtl_mode %}rtl{% endif %} preload push_filter_left js_overhidden relative" {% if settings.bg_color_body != blank %}style="background: {{settings.bg_color_body}};"{% endif %}>
+<body class="{% if settings.enable_rtl_mode %}rtl{% endif %} {% if template == 'index' %}greadiant-bg{% endif %}preload push_filter_left js_overhidden relative" {% if settings.bg_color_body != blank %}style="background: {{settings.bg_color_body}};"{% endif %}>
   {% unless template == 'index' %}
   <div class="wrap">
     <div class="contentbody">
@@ -135,6 +135,10 @@ Add the page template as a class for easy page or template specific styling.
 
   {% if template contains 'index' %}
   <style>
+    .greadiant-bg{
+      background: linear-gradient(177.92deg, #0052D4 0%, #4364F7 65.24%, #6FB1FC 101.83%);
+      transform: matrix(1, 0, 0, -1, 0, 0);  
+    }
     .side-border p, .side-border ul{
       margin-bottom: 0;
       overflow: hidden;
@@ -350,13 +354,13 @@ Add the page template as a class for easy page or template specific styling.
         </li>
         <li class="nav-item">
           <a href="" class="nav-link">
-            <img src="" alt="">
+            <i class="fa-solid fa-goal-net"></i>
             Wireframing
           </a>
         </li>
         <li class="nav-item">
           <a href="" class="nav-link">
-            <img src="" alt="">
+            <i class="fa-solid fa-file-excel"></i>
             MS Excel
           </a>
         </li>
