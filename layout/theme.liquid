@@ -146,6 +146,11 @@ Add the page template as a class for easy page or template specific styling.
         -moz-animation: caption 15s linear 0s infinite;
           -webkit-animation: caption 15s linear 0s infinite;
     }
+    .side-border p:hover, .side-border ul:hover{
+      animation: none;
+        -moz-animation: none;
+          -webkit-animation: none;
+    }
     @keyframes caption{0%{margin-left:100%}100%{margin-left:-600px}}
     @-moz-keyframes caption{0%{margin-left:100%}100%{margin-left:-600px}}
     @-webkit-keyframes caption{0%{margin-left:100%}100%{margin-left:-600px}}
