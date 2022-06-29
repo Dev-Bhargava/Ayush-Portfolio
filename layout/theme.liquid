@@ -208,9 +208,10 @@ Add the page template as a class for easy page or template specific styling.
   {{ 'masonry.pkgd.min.js' | asset_url | script_tag }}
 
 
-  {% unless template == 'index' %}
   {% include 'product-quick-view' %}
+  {% unless template == 'index' %}
   {% include 'template-popup' %}
+  {% endunless %}
   {% include 'template-popup-ajax-addtocart' %}
 
   {% include 'linked-options' %}
@@ -224,7 +225,6 @@ Add the page template as a class for easy page or template specific styling.
   {% if settings.ena_popup_recently_view %}
   {% include 'recently-sticky-cart' %}
   {% endif %}
-  {% endunless %}
 
   {% if settings.show_menu_toolbar %}
   {% include 'menu-toolbar' %}
