@@ -209,6 +209,7 @@ Add the page template as a class for easy page or template specific styling.
 
 
   {% include 'product-quick-view' %}
+  {% include 'template-popup' %}
   {% include 'template-popup-ajax-addtocart' %}
 
   {% include 'linked-options' %}
@@ -228,9 +229,9 @@ Add the page template as a class for easy page or template specific styling.
   {% endif %}
 
   {% if settings.ena_popup_news %}
-  {% if template contains 'index' %}
+  {% unless template == 'index' %}
   {% include 'popup-newletter' %}
-  {% endif%}
+  {% endunless %}
   {% endif %}
 
   {% if template contains 'product' %}
