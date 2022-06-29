@@ -146,31 +146,12 @@ Add the page template as a class for easy page or template specific styling.
         -moz-animation: caption 15s linear 0s infinite;
           -webkit-animation: caption 15s linear 0s infinite;
     }
-    @-moz-keyframes caption{
-      0%{
-        margin-left:100%
-      }
-      100%{
-        margin-left:-600px
-      }
-    }
-    @-webkit-keyframes caption{
-      0%{
-        margin-left:100%
-      }
-      100%{
-        margin-left:-600px
-      }
-    }
-
-    caption{
-      0%{
-        margin-left:100%
-      }
-      100%{
-        margin-left:-600px
-      }
-    }
+    @keyframes caption{0%{margin-left:100%}100%{margin-left:-600px}}
+    @-moz-keyframes caption{0%{margin-left:100%}100%{margin-left:-600px}}
+    @-webkit-keyframes caption{0%{margin-left:100%}100%{margin-left:-600px}}
+    @keyframes caption1{0%{margin-left:100%}100%{margin-top:-600px}}
+    @-moz-keyframes caption1{0%{margin-top:100%}100%{margin-top:-600px}}
+    @-webkit-keyframes caption1{0%{margin-top:100%}100%{margin-top:-600px}}
     .side-border{
       width: 100%;
       background-color: #ffffff;
@@ -200,6 +181,12 @@ Add the page template as a class for easy page or template specific styling.
       left:0;
       max-width: 50px;
       height: 98vh;
+    }
+    .side-border.left p, .side-border.right p{
+      transform: rotate(90deg);
+      animation: caption1 15s linear 0s infinite;
+        -moz-animation: caption1 15s linear 0s infinite;
+          -webkit-animation: caption1 15s linear 0s infinite;
     }
   </style>
     <div class="side-border top">
