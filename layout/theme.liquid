@@ -133,6 +133,72 @@ Add the page template as a class for easy page or template specific styling.
   </div>
   {% endunless %}
 
+  {% if template contains 'index' %}
+  <style>
+    .side-border{
+      width: 100%;
+      background-color: #ffffff;
+      color: #0052D4;
+    }
+    .side-border.top{
+      border-bottom: 2px solid #0052D4;
+      top:0;
+      left:0;
+    }
+  </style>
+    <div class="side-border top">
+      <p>A self-motivated , creative and ambitious Web Developer with  two years of professional experience. Knowledgeable in designing, maintaining and developing user interfaces, testing and debugging within e-commerce technologies. Equipped with a diverse and promising skill-set.</p>
+    </div>
+    <div class="side-border right">
+      <p></p>
+    </div>
+    <div class="side-border bottom">
+      <p></p>
+    </div>
+    <div class="side-border left">
+      <ul>
+        <li>
+          <img src="" alt="">
+          Figma Design / Prototyping
+        </li>
+        <li>
+          <img src="" alt="">
+          Adobe XD / Prototyping
+        </li>
+        <li>
+          <img src="" alt="">
+          Adobe Illustrator
+        </li>
+        <li>
+          <img src="" alt="">
+          Adobe Photoshop
+        </li>
+        <li>
+          <img src="" alt="">
+          PSD to .Liquid
+        </li>
+        <li>
+          <img src="" alt="">
+          Corel Draw X8
+        </li>
+        <li>
+          <img src="" alt="">
+          UI / UX Design
+        </li>
+        <li>
+          <img src="" alt="">
+          Responsive Web Design
+        </li>
+        <li>
+          <img src="" alt="">
+          Wireframing
+        </li>
+        <li>
+          <img src="" alt="">MS Excel
+        </li>
+      </ul>
+    </div>
+  {% endif %}
 
   {% comment %}
   {{ 'fastclick.js' | asset_url | script_tag }}
