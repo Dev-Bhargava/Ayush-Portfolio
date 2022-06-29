@@ -183,7 +183,8 @@ Add the page template as a class for easy page or template specific styling.
       height: 98vh;
     }
     .side-border.left p, .side-border.right p{
-      transform: rotate(90deg);
+      writing-mode: vertical-lr;
+      overflow: inherit;
       animation: caption1 15s linear 0s infinite;
         -moz-animation: caption1 15s linear 0s infinite;
           -webkit-animation: caption1 15s linear 0s infinite;
