@@ -44,7 +44,7 @@
   {{ 'style-main.scss.css' | asset_url | stylesheet_tag }}
   {{ 'engo-customizes.css' | asset_url | stylesheet_tag }}
   {{ 'animate.min.css'| asset_url | stylesheet_tag}}
-  
+
 
 
   <!-- Header hook for plugins ================================================== -->
@@ -107,7 +107,7 @@
 Add the page template as a class for easy page or template specific styling.
 {% endcomment %}
 <body class="{% if settings.enable_rtl_mode %}rtl{% endif %} preload push_filter_left js_overhidden relative" {% if settings.bg_color_body != blank %}style="background: {{settings.bg_color_body}};"{% endif %}>
-
+  {% unless template contains 'index' %}
   <div class="wrap">
     <div class="contentbody">
       {% if settings.enable_promo_topbar %}
@@ -131,12 +131,13 @@ Add the page template as a class for easy page or template specific styling.
     </div>
 
   </div>
+  {% endunless %}
 
 
   {% comment %}
   {{ 'fastclick.js' | asset_url | script_tag }}
   {% endcomment %}
-  
+
   {% include 'currencies' %}
   {{ 'timber.js' | asset_url | script_tag }}
 
@@ -240,9 +241,9 @@ Add the page template as a class for easy page or template specific styling.
       if($(window).width() > 1024){
         $(window).scroll(function(){
           if ($(window).scrollTop() >= 100) {
-            $('.sticky_addcart').addClass('active'); 
-            $('.popup_random_prod').addClass('active'); 
-            $('.popup-cookie').addClass('active'); 
+            $('.sticky_addcart').addClass('active');
+            $('.popup_random_prod').addClass('active');
+            $('.popup-cookie').addClass('active');
 
           }
           else {
@@ -270,19 +271,19 @@ Add the page template as a class for easy page or template specific styling.
         $('.got_it').on('click', function() {
           $('.popup_random_prod').css('bottom','0px');
 
-        }); 
+        });
 
 
 
         $(window).scroll(function(){
           if ($(window).scrollTop() >= 300) {
-            $('.sticky_addcart').addClass('active'); 
+            $('.sticky_addcart').addClass('active');
             $('.popup-cookie').css('bottom','114px');
-            $('.menu_toolbar').addClass('active'); 
+            $('.menu_toolbar').addClass('active');
             $('.got_it').on('click', function() {
               $('.popup_random_prod').css('bottom','114px');
 
-            }); 
+            });
 
             if($('.popup-cookie').length){
               $('.popup_random_prod').css('bottom','323px');
@@ -329,13 +330,13 @@ Add the page template as a class for easy page or template specific styling.
         $('.got_it').on('click', function() {
           $('.popup_random_prod').css('bottom','0px');
 
-        }); 
+        });
 
 
         $(window).scroll(function(){
 
           if ($(window).scrollTop() >= 300) {
-            $('.menu_toolbar').addClass('active'); 
+            $('.menu_toolbar').addClass('active');
             $('.popup_random_prod').css('bottom','260px');
             $('.popup-cookie').css('bottom','50px');
             $('.got_it').on('click', function() {
