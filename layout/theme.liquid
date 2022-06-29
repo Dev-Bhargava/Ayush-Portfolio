@@ -209,9 +209,6 @@ Add the page template as a class for easy page or template specific styling.
 
 
   {% include 'product-quick-view' %}
-  {% unless template == 'index' %}
-  {% include 'template-popup' %}
-  {% endunless %}
   {% include 'template-popup-ajax-addtocart' %}
 
   {% include 'linked-options' %}
