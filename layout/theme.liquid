@@ -147,11 +147,11 @@ Add the page template as a class for easy page or template specific styling.
           -webkit-animation: caption 15s linear 0s infinite;
     }
     .side-border:hover p, .side-border:hover ul{
+      cursor: pointer;
+      animation-play-state:paused;
       -webkit-animation-play-state:paused;
-  -moz-animation-play-state:paused;
-  -o-animation-play-state:paused;
-  animation-play-state:paused;
-  cursor: pointer;
+        -moz-animation-play-state:paused;
+          -o-animation-play-state:paused;
     }
     @keyframes caption{0%{margin-left:100%}100%{margin-left:-600px}}
     @-moz-keyframes caption{0%{margin-left:100%}100%{margin-left:-600px}}
