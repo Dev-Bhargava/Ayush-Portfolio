@@ -322,6 +322,18 @@ Add the page template as a class for easy page or template specific styling.
       line-height: 22px;
     }
   }
+
+  @media(max-width: 768px){
+    .center-box {
+      padding: 1.2vh 2.5vh;
+      border-radius: 0;
+      top: 50px;
+      width: 86%;
+      flex-direction: row;
+      position: fixed;
+      left: 50px;
+    }
+  }
   </style>
     <div class="side-border top">
       <div class="skill-box">Programming Skills</div>
@@ -476,8 +488,10 @@ Add the page template as a class for easy page or template specific styling.
       </div>
       <div class="row center-box">
         <img src="https://cdn.shopify.com/s/files/1/0615/9705/7185/files/image_1.png?v=1656577865" alt="">
-        <h4>Ayush Bhargava</h4>
-        <h6>Web Developer</h6>
+        <div class="">
+          <h4>Ayush Bhargava</h4>
+          <h6>Web Developer</h6>
+        </div>
       </div>
     </div>
   {% endif %}
